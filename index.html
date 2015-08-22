@@ -1,11 +1,848 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <title>冷正婷</title>
-  </head>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <title></title>
+    <style>
+        body,div,ul,li,p,img,a,h1,input,text,dl,dt,dd,h2,h3,h4,h5,h6{margin: 0;padding: 0;}
+        body{font-size: 12px;}
+        /*header*/
+        #top-bar{width: 100%;height: 30px;background: #333333;}
+        #top-list{width: 1180px;margin: 0 auto;}
+        ul{list-style: none;}
+        a{text-decoration: none;color: #a8a8a8;}
+        #top-bar a:hover{color: #dddddd;}
+        #top-list li{float: left;}
+        .left-bar li a{height: 30px;line-height: 30px;padding-left: 8px;padding-right: 8px;}
+        .tip{margin-top: 5px;margin-left: 8px;margin-right: 8px;color: #a8a8a8;}
+        .right-bar{float: right;}
+        .right-bar li a{height: 30px;line-height: 30px;padding-left: 8px;padding-right: 8px;}
+        /*11111header-search11111111111*/
+        #top-con{width: 1180px;height: 37px;margin-right: auto;margin-left: auto;padding-top: 20px;padding-bottom: 20px;
+                overflow: hidden;position: relative;}
+        .top-logo{width: 213px;height: 37px;background: url("img/logo.png")no-repeat;display: inline-block;
+                    }
+        .top-search{margin-left:146px;height: 37px;white-space: nowrap;display: inline-block;
+                 position: absolute;top: 20px;}
+        .top-input{height: 25px;width: 362px;padding: 5px; border: 1px solid #d3d3d3;border-right: none;
+                   line-height: 25px;margin-right: -3.5px;vertical-align:top;}
+        .top-sum{width: 88px;height: 37px;background: #d70c19;line-height: 37px;text-align: center;
+                 border: none;letter-spacing: 5px;color: #fff;}
+        .top-info{height: 36px;float: right;}
+        .info-img{float: left;height: 36px;width: 36px;}
+        .username{color: #d70c19;width: 68px;height: 18px;margin-left: 46px;line-height: 18px;}
+        .user-info{background: url("img/site-icons.png")-490px 0;width: 10px;height: 10px;display: inline-block;
+                 position: relative;top: 3px;}
+        /*top-nav*/
+        #top-nav{width: 1180px;height: 45px;margin-left: auto;margin-right: auto;background: #f6f6f6;}
+        #top-nav li{float: left;text-decoration: none;}
+        #top-nav li a{width: 100px;height: 45px;line-height: 45px;text-align: center;color: #666;display: inline-block;
+                   font-weight: bold;}
+        #top-nav li a:hover{background:#d70c19;color:#ffffff; }
+        .banner{width: 1180px;height: 430px;margin: 0 auto;overflow: hidden;}
+        .banner-ad{width: 800px;height: 430px;float: left;}
+        .banner .banner-news{width: 380px;height: 430px;float: right;}
+        .ban-news-hd{padding: 20px;border-top: 2px solid#d70c19;}
+        .ban-news-hd h2{font-size: 22px;font-weight: normal;}
+        .ban-news-hd h3{padding-top: 10px;margin-top: 10px;border-top: 1px solid#333;font-size: 22px;
+                        font-weight: normal;}
+        .ban-news-hd h3 a{color: #ec1f27;}
+        .ban-news-hd p{line-height: 25px;margin-top: 10px;}
+        .ban-news-hd dl dt{float: left;line-height: 35px;}
+        .ban-news-hd dl dt a{color: #ec1f27;}
+        .ban-news-hd dl dt span{width: 5px;height: 5px;background: #ec1f27;margin-right: 10px;display:inline-block;}
+        .ban-news-hd dl dd{float: left;color: #777;line-height: 35px;margin-left: 10px;}
+        .ban-news-hd dl dd a{color: #777;}
+        /*module*/
+        .module{width: 1180px;margin-left: auto;margin-right: auto;margin-top: 20px;overflow: hidden;}
+        .module ul li{float: left;}
+        .module .module-left{margin-right: 20px;width: 180px;}
+        /*industry-left*/
+        .industry{width: 1180px;margin-left: auto;margin-right: auto;margin-top: 20px;overflow: hidden;}
+        .industry-left{width: 380px;float: left;margin-right: 20px;}
+        .ind-left-title h2, .ind-right-title h2,.apply-title h2, .recom-title h2{font-size: 20px;line-height: 30px;font-weight: normal;display: inline-block;}
+        .ind-left-title a, .ind-right-title a,.apply-title a, .recom-title a{display: inline-block;float: right;line-height: 30px;color: #a8a8a8;}
+        .industry-left span a{line-height: 35px;color: #069dd7;font-size: 18px;font-weight: normal;}
+        .industry-left dd, .hot-cen-con li{line-height: 25px;width: 380px;}
+        .industry-left dd i, .hot-cen-con li i{width: 3px;height: 3px;background: #0093d1;display: inline-block;vertical-align: middle;}
+        .industry-left dd a, .hot-cen-con li a{font-size: 12px;color: #666;display: inline-block;margin-left: 10px;}
+        .industry-left dd a:hover, .hot-cen-con li a:hover{color: #333333;}
+        /*industry-right*/
+        .ind-left-title, .ind-right-title, .recom-title{border-bottom: 1px solid #ececec;}
+        .ind-right-title{width: 380px;overflow: hidden;}
+        .ind-right-title i{background: url("img/site-icons.png")-479px -20px;width: 21px;height: 21px;
+                         margin-right: 10px;display: inline-block;position: relative;top: 3px;}
+        .industry-right ul{margin-top: 10px;}
+        .industry-right ul li{float: left;overflow: hidden;}
+        .industry-right ul li a{float: left;width: 120px;height: 110px;display: inline-block;
+           position: relative;}
+        .industry-right li a img{width: 120px;height: 110px;}
+        .ind-right-pic1{margin-right: 10px;margin-bottom: 10px;}
+        .ind-right-pic2{margin-bottom: 10px;}
+        .ind-right-pic3{margin-left: 10px;}
+        /*hot*/
 
-  <body>
-你好嘛我是鞥整体
-  </body>
+        .apply,.hot,.recommend, .footer{width: 1180px;margin-left: auto;margin-right: auto;margin-top: 20px;overflow: hidden;}
+        .hot-left{width: 380px;float: left;}
+        .hot-tittle {overflow: hidden;width: 380px;}
+        .hot-tittle li{float: left;margin-right: 15px;width: 80px;height: 30px;}
+        .hot-tittle li a{font-size: 16px;line-height: 30px;color: #000000;font-family: '微软雅黑';}
+        .hot-tittle .active{border-bottom: 2px solid #069dd7;}
+        .hot-tittle .active1{color:#069dd7;}
+        .hot-pic{width: 380px;height: 270px;}
+        .hot-pic ul{overflow: hidden;}
+        .hot-pic li{float: left;overflow: hidden;}
+        .hot-pic li a{overflow: hidden;display: inline-block;position: relative;height: 115px;}
+        .hot-pic li a img{width: 180px;height: 115px;}
+        .hot-pic-1{margin-top: 20px;}
+        .hot-pic-2{margin-top: 20px;margin-left: 20px;}
+        .allp{width: 100%;left:0;bottom:0;height: 25px; line-height: 25px; vertical-align: middle;
+            text-align: center; opacity: 0.5;filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity: 0.5;
+            background: #000;position:absolute;}
+        .allp span{color: #fff; display: inline-block;}
+
+        .hot-center{float: left;width: 380px;margin-left: 20px;overflow: hidden;}
+        .hot-cen-con dl{margin-top: 20px;}
+        .hot-cen-con dl dt a{display: inline-block;position: relative;height: 115px;width: 380px;}
+        .hot-cen-con ul{overflow: hidden;margin-top: 10px;}
+        .hot-cen-con ul li{}
+
+        .hot-right{width: 380px;display: inline-block;margin-left: 20px;overflow: hidden;}
+        .hot-right-title i{background: url("img/site-icons.png")-479px -49px;width: 21px;height: 25px;
+             margin-right: 10px;display: inline-block;position: relative;top: 3px;}
+        .hot-right-title h2{display: inline-block;color: #404040;font-size: 20px;line-height: 30px;
+                           font-weight: normal;}
+        .hot-right-title a{float: right;display: inline-block;height: 30px;line-height: 30px;color: #666;}
+        .hot-right-title{overflow: hidden;border-bottom: 1px solid #d3d3d3;width: 380px;}
+
+
+        .hot-right li i, .recom-app4 dl dd span{width: 15px;height: 15px;font-size: 14px;background: #b9b9b9;color: #fff;
+                      display: inline-block;font-family: '宋体';vertical-align: middle;line-height: 15px;
+                      font-weight: bold;font-style: normal;text-align: center;}
+        .hot-right .first, .recom-app4 dl dd .first{background: #ff4e00;}
+        .hot-right .second, .recom-app4 dl dd .second{background: #ff983d;}
+        .hot-right li a{color: #666666;font-family: '新宋体';display: inline-block;}
+        .hot-right li span{background: url("img/icon/score.jpg")no-repeat;width: 67px;height: 11px;
+                          display: inline-block;float: right;position: relative;top: 10px;}
+        .hot-right ul{width: 380px;margin-top: 10px;}
+        .hot-right ul li{height: 30px;line-height: 30px;}
+
+        /*apply*/
+        .apply ul{padding: 20px 45px;overflow: hidden;}
+        .apply ul li{float: left;overflow: hidden;width: 120px;}
+        .apply ul li a{display: block;line-height: 22px;}
+        .apply ul li img{width: 71px;height: 71px;display: block;}
+        .apply ul li span{background: url("img/icon/score.jpg")center center no-repeat;width: 67px;height: 22px;
+                          display:block;line-height: 22px;vertical-align: bottom;}
+        /*center-ad*/
+        .center-ad{width: 1180px;margin-left: auto;margin-right: auto;}
+        /*recommend*/
+        .recom-app{overflow: hidden;float: left;}
+        .recom-app .blue{height: 350px;width: 190px;background: #31a1e9;float: left;}
+        .recom-app2{float: left;border-bottom: 1px solid #ccc;padding-bottom: 12px;border-right: 1px solid #ccc; }
+        .recom-app2 h3{height: 30px;line-height: 30px;padding-left: 30px;font-size: 18px;font-weight: normal;}
+        .recom-app2 p{color: #8c8c8c;line-height: 20px;padding-left: 30px;width: 368px;}
+
+        .recom-app3{float: left;width: 401px;}
+        .recom-app3 li{width: 200px;float: left;height: 116px;}
+        .recom-app3 .single{border-bottom:1px solid#ccc;border-right: 1px solid#ccc; }
+        .recom-app3 .double{border-bottom: 1px solid#ccc;}
+        .recom-app3 li img{display: inline-block;float: left;margin-top: 30px;margin-left: 15px;}
+        .recom-app3 li dl{margin-top: 30px;font-size: 12px;margin-left: 110px;}
+        .recom-app3 li dl dt{font-weight: bold;}
+        .recom-app3 li dl dd{line-height: 20px;color: #8c8c8c;}
+
+        .recom-app4{float: right;width: 186px;border-left: 1px solid#ccc;border-right: 1px solid#ccc;
+                    border-bottom: 1px solid#ccc;}
+        .recom-app4 dl{padding: 10px;}
+        .recom-app4 dl dt{height: 29px;line-height: 35px;border-bottom: 1px solid#ccc;}
+        .recom-app4 dl dt span{background: url("img/site-icons.png")-480px -90px no-repeat;display: inline-block;
+                               width: 20px;height: 14px;margin-right: 10px;}
+        .recom-app4 dl dd{height: 30px;line-height: 30px;}
+        .recom-app4 dl dd span{margin-right: 10px;}
+
+
+        /*footer*/
+        .footer dl{padding:10px 0; overflow: hidden;border-top: 1px solid#ccc;}
+        .footer dl dt{float: left;line-height: 20px;}
+        .footer dl dd{float: left;}
+        .footer dl dd a{line-height: 20px;padding: 0 10px;border-right: 1px solid#ccc;display:inline-block;
+                        vertical-align: middle;color: #666;}
+        .footer ul{padding: 10px 0;overflow: hidden;border-top: 1px solid#ccc;}
+        .footer ul li{float: left;}
+        .footer ul li a{display: inline-block;padding-right: 20px;color: #666;}
+        .footer p{color: #666;}
+        .footer-pic{margin-top: 20px;margin-bottom: 50px;}
+        .ft-pic1{display: inline-block;margin-left: 20px;height: 24px;}
+    </style>
+</head>
+<body>
+<div class="header">
+    <div id="top-bar">
+        <div id="top-list">
+            <ul class="left-bar">
+                <li><a href="#">登录</a></li>
+                <li class="tip">|</li>
+                <li><a href="#">注册</a></li>
+            </ul>
+            <ul class="right-bar">
+                <li><a href="#">品质微博</a></li>
+                <li><a href="#">品质微信</a></li>
+                <li><a href="#">官方QQ</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="top-con">
+        <a class="top-logo" href="#"></a>
+        <form class="top-search">
+            <input class="top-input" type="text">
+            <input class="top-sum" type="submit" value="搜索">
+        </form>
+        <dl class="top-info">
+            <dt class="info-img">
+                <a><img src="img/demon/demon01.jpg" alt="user" width="36" height="36"></a>
+            </dt>
+            <dd class="username">冷冷</dd>
+            <dd>
+                <span>个人中心</span>
+                <a href="#"><i class="user-info"></i></a>
+            </dd>
+        </dl>
+    </div>
+    <div id="top-nav">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">新闻</a></li>
+            <li><a href="#">论坛</a></li>
+            <li><a href="#">测评</a></li>
+            <li><a href="#">产品中心</a></li>
+            <li><a href="#">活动中心</a></li>
+        </ul>
+    </div>
+</div>
+<div id="content">
+    <div class="banner">
+        <div class="banner-ad">
+            <img src="img/ad/banner01.jpg">
+        </div>
+        <div class="banner-news">
+            <div class="ban-news-hd">
+                <h2>热点新闻</h2>
+                <ul>
+                    <li>
+                        <h3>
+                            <a href="#">【天猫墨盒1S评测】评测汇总</a>
+                        </h3>
+                        <p>
+                            陶经是谁？这个名字可能不为观众所熟知，但在业内却是鼎鼎大名。他，是张艺谋的御用录音师。
+                        </p>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>
+                                <span></span>
+                                <a href="#">硬件测评</a>
+                            </dt>
+                            <dd>|</dd>
+                            <dd><a href="#">小米，华为，联想三大性价比国产机</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>
+                                <span></span>
+                                <a href="#">硬件测评</a>
+                            </dt>
+                            <dd>|</dd>
+                            <dd><a href="#">小米，华为，联想三大性价比国产机</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>
+                                <span></span>
+                                <a href="#">硬件测评</a>
+                            </dt>
+                            <dd>|</dd>
+                            <dd><a href="#">小米，华为，联想三大性价比国产机</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>
+                                <span></span>
+                                <a href="#">硬件测评</a>
+                            </dt>
+                            <dd>|</dd>
+                            <dd><a href="#">小米，华为，联想三大性价比国产机</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>
+                                <span></span>
+                                <a href="#">硬件测评</a>
+                            </dt>
+                            <dd>|</dd>
+                            <dd><a href="#">小米，华为，联想三大性价比国产机</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>
+                                <span></span>
+                                <a href="#">硬件测评</a>
+                            </dt>
+                            <dd>|</dd>
+                            <dd><a href="#">小米，华为，联想三大性价比国产机</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>
+                                <span></span>
+                                <a href="#">硬件测评</a>
+                            </dt>
+                            <dd>|</dd>
+                            <dd><a href="#">小米，华为，联想三大性价比国产机</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="module">
+        <ul>
+            <li class="module-left">
+                <a href="#">
+                    <img src="img/pic/pic-cp.jpg">
+                </a>
+            </li>
+            <li class="module-left">
+                <a href="#">
+                    <img src="img/pic/pic-pzzk.jpg">
+                </a>
+            </li>
+            <li class="module-left">
+                <a href="#">
+                    <img src="img/pic/pic-zx.jpg">
+                </a>
+            </li>
+            <li class="module-left">
+                <a href="#">
+                    <img src="img/pic/pic-yy.jpg">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/ad/ad01.jpg">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="industry">
+        <div class="industry-left">
+
+            <div class="ind-left-title">
+                <h2>业界动态</h2>
+                <a href="#">>更多新闻</a>
+            </div>
+            <dl>
+                <dt>
+                <span>
+                    <a href="#">Bootstrap,来自Twitter,最受欢迎的前端框架</a>
+                </span>
+                </dt>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="industry-left">
+            <div class="ind-left-title">
+                <h2>行业观点</h2>
+                <a href="#">>更多新闻</a>
+            </div>
+            <dl>
+                <dt>
+                <span>
+                    <a href="#">Bootstrap,来自Twitter,最受欢迎的前端框架</a>
+                </span>
+                </dt>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+                <dd>
+                    <i></i>
+                    <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="industry-right">
+            <div class="ind-right-title">
+                <i></i>
+                <h2>热门观点</h2>
+                <a href="#">>更多观点</a>
+            </div>
+            <ul>
+                <li class="ind-right-pic1">
+                    <a href="javascript:">
+                        <img src="img/demon/demon01.jpg">
+                        <p class="allp">
+                            <span>标题</span>
+                        </p>
+                    </a>
+                </li>
+                <li class="ind-right-pic1">
+                    <a href="javascript:">
+                        <img src="img/demon/demon02.jpg">
+                        <p class="allp">
+                            <span>标题</span>
+                        </p>
+                    </a>
+                </li>
+                <li class="ind-right-pic2">
+                    <a href="javascript:">
+                        <img src="img/demon/demon03.jpg">
+                        <p class="allp">
+                            <span>标题</span>
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:">
+                        <img src="img/demon/demon04.jpg">
+                        <p class="allp">
+                            <span>标题</span>
+                        </p>
+                    </a>
+                </li>
+                <li class="ind-right-pic3">
+                    <a href="javascript:">
+                        <img src="img/demon/demon05.jpg">
+                        <p class="allp">
+                            <span>标题</span>
+                        </p>
+                    </a>
+                </li>
+                <li class="ind-right-pic3">
+                    <a href="javascript:">
+                        <img src="img/demon/demon06.jpg">
+                        <p class="allp">
+                            <span>标题</span>
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hot">
+        <div class="hot-left">
+            <ul class="hot-tittle">
+                <li class="active">
+                    <a class="active1" href="javascript:">热门测评</a>
+                </li>
+                <li>
+                    <a href="javascript:">最新测评</a>
+                </li>
+                <li>
+                    <a href="javascript:">网友测评</a>
+                </li>
+                <li>
+                    <a href="javascript:">媒体测评</a>
+                </li>
+            </ul>
+            <div class="hot-pic">
+                <ul>
+                    <li class="hot-pic-1">
+                        <a href="javascript:">
+                            <img src="img/demon/demon01.jpg">
+                            <p class="allp">
+                                <span>标题</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="hot-pic-2">
+                        <a href="javascript:">
+                            <img src="img/demon/demon02.jpg">
+                            <p class="allp">
+                                <span>标题</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="hot-pic-1">
+                        <a href="javascript:">
+                            <img src="img/demon/demon03.jpg">
+                            <p class="allp">
+                                <span>标题</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="hot-pic-2">
+                        <a href="javascript:">
+                            <img src="img/demon/demon04.jpg">
+                            <p class="allp">
+                                <span>标题</span>
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="hot-center">
+            <ul class="hot-tittle">
+                <li class="active">
+                    <a class="active1" href="javascript:">热门测评</a>
+                </li>
+                <li>
+                    <a href="javascript:">最新测评</a>
+                </li>
+                <li>
+                    <a href="javascript:">网友测评</a>
+                </li>
+                <li>
+                    <a href="javascript:">媒体测评</a>
+                </li>
+            </ul>
+            <div class="hot-cen-con">
+                <dl>
+                    <dt>
+                        <a href="javascript:">
+                            <img src="img/demon/demon04.jpg" width="380" height="115">
+                            <p class="allp">
+                                <span>火热美女</span>
+                            </p>
+                        </a>
+                    </dt>
+                    <dd></dd>
+                </dl>
+                <ul>
+                    <li>
+                        <i></i>
+                        <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                    </li>
+                    <li>
+                        <i></i>
+                        <a href="javascript:">Bootstrap是一种用于快速开发Web应用程序和网站的前端流行框架</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="hot-right">
+            <div class="hot-right-title">
+                <h2>
+                    <i></i>
+                    开发者应用排行
+                </h2>
+                <a href="#">>更多排行</a>
+            </div>
+            <ul>
+                <li>
+                    <i class="first">1</i>
+                    <a href="javascript:">微信</a>
+                    <span></span>
+                </li>
+                <li>
+                    <i class="second">2</i>
+                    <a href="javascript:">腾讯QQ</a>
+                    <span></span>
+                </li>
+                <li>
+                    <i>3</i>
+                    <a href="javascript:">新浪微博</a>
+                    <span></span>
+                </li>
+                <li>
+                    <i>4</i>
+                    <a href="javascript:">360安全卫士</a>
+                    <span></span>
+                </li>
+                <li>
+                    <i>5</i>
+                    <a href="javascript:">支付宝</a>
+                    <span></span>
+                </li>
+                <li>
+                    <i>6</i>
+                    <a href="javascript:">凤凰新闻</a>
+                    <span></span>
+                </li>
+                <li>
+                    <i>7</i>
+                    <a href="javascript:">火狐浏览器</a>
+                    <span></span>
+                </li>
+                <li>
+                    <i>8</i>
+                    <a href="javascript:">爱奇艺视频</a>
+                    <span></span>
+                </li>
+                <li>
+                    <i>9</i>
+                    <a href="javascript:">暴风影音</a>
+                    <span></span>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+    <div class="apply">
+        <div class="apply-title">
+            <h2>应用推荐</h2>
+            <a href="#">>更多推荐</a>
+        </div>
+        <ul>
+            <li>
+                <img src="img/demon/app01.jpg">
+                <a href="javascript:">360安全卫士</a>
+                <span></span>
+            </li>
+            <li>
+                <img src="img/demon/app02.jpg">
+                <a href="javascript:">360安全卫士</a>
+                <span></span>
+            </li>
+            <li>
+                <img src="img/demon/app03.jpg">
+                <a href="javascript:">360安全卫士</a>
+                <span></span>
+            </li>
+            <li>
+                <img src="img/demon/app04.jpg">
+                <a href="javascript:">360安全卫士</a>
+                <span></span>
+            </li>
+            <li>
+                <img src="img/demon/app05.jpg">
+                <a href="javascript:">360安全卫士</a>
+                <span></span>
+            </li>
+            <li>
+                <img src="img/demon/app06.jpg">
+                <a href="javascript:">360安全卫士</a>
+                <span></span>
+            </li>
+            <li>
+                <img src="img/demon/app07.jpg">
+                <a href="javascript:">360安全卫士</a>
+                <span></span>
+            </li>
+            <li>
+                <img src="img/demon/app08.jpg">
+                <a href="javascript:">360安全卫士</a>
+                <span></span>
+            </li>
+            <li>
+                <img src="img/demon/app09.jpg">
+                <a href="javascript:">360安全卫士</a>
+                <span></span>
+            </li>
+        </ul>
+    </div>
+    <div class="center-ad">
+        <a href="javascript:">
+            <img src="img/ad/ad02.jpg">
+        </a>
+    </div>
+    <div class="recommend">
+        <div class="recom-title">
+            <h2>品质智推</h2>
+            <a href="#">>更多推荐</a>
+        </div>
+        <div class="recom-app">
+            <div class="blue"></div>
+            <div class="recom-app2">
+                <img src="img/demon/cp01.jpg">
+                <h3>超级电视MAX70</h3>
+                <p>作为一款在配置，画质，性价比突出。作为一款在配置，画质，性价比突出。</p>
+            </div>
+            <div class="recom-app3">
+                <ul>
+                    <li class="single">
+                        <img src="img/demon/cp02.jpg">
+                        <dl>
+                            <dt>乐视盒子CIS</dt>
+                            <dd>让普通电视变身超级电视</dd>
+                        </dl>
+                    </li>
+                    <li class="double">
+                        <img src="img/demon/cp02.jpg">
+                        <dl>
+                            <dt>乐视盒子CIS</dt>
+                            <dd>让普通电视变身超级电视</dd>
+                        </dl>
+                    </li>
+                    <li class="single">
+                        <img src="img/demon/cp02.jpg">
+                        <dl>
+                            <dt>乐视盒子CIS</dt>
+                            <dd>让普通电视变身超级电视</dd>
+                        </dl>
+                    </li>
+                    <li class="double">
+                        <img src="img/demon/cp02.jpg">
+                        <dl>
+                            <dt>乐视盒子CIS</dt>
+                            <dd>让普通电视变身超级电视</dd>
+                        </dl>
+                    </li>
+                    <li class="single">
+                        <img src="img/demon/cp02.jpg">
+                        <dl>
+                            <dt>乐视盒子CIS</dt>
+                            <dd>让普通电视变身超级电视</dd>
+                        </dl>
+                    </li>
+                    <li class="double">
+                        <img src="img/demon/cp02.jpg">
+                        <dl>
+                            <dt>乐视盒子CIS</dt>
+                            <dd>让普通电视变身超级电视</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <div class="recom-app4">
+                <dl>
+                    <dt><span></span>品智排行榜</dt>
+                    <dd><span class="first">1</span>乐视盒子NEW C1S</dd>
+                    <dd><span class="second">2</span>乐视盒子NEW C1S</dd>
+                    <dd><span>3</span>乐视盒子NEW C1S</dd>
+                    <dd><span>4</span>乐视盒子NEW C1S</dd>
+                    <dd><span>5</span>乐视盒子NEW C1S</dd>
+                    <dd><span>6</span>乐视盒子NEW C1S</dd>
+                    <dd><span>7</span>乐视盒子NEW C1S</dd>
+                    <dd><span>8</span>乐视盒子NEW C1S</dd>
+                    <dd><span>9</span>乐视盒子NEW C1S</dd>
+                    <dd><span>10</span>乐视盒子NEW C1S</dd>
+                </dl>
+            </div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <dl>
+        <dt>合作伙伴:</dt>
+        <dd><a href="javascript:">电科技</a></dd>
+        <dd><a href="javascript:">HTML5梦工场</a></dd>
+        <dd><a href="javascript:">电科技</a></dd>
+        <dd><a href="javascript:">HTML5梦工场</a></dd>
+        <dd><a href="javascript:">电科技</a></dd>
+        <dd><a href="javascript:">HTML5梦工场</a></dd>
+        <dd><a href="javascript:">电科技</a></dd>
+        <dd><a href="javascript:">HTML5梦工场</a></dd>
+    </dl>
+    <dl>
+        <dt>赞助厂商:</dt>
+        <dd><a href="javascript:">电科技</a></dd>
+        <dd><a href="javascript:">HTML5梦工场</a></dd>
+        <dd><a href="javascript:">电科技</a></dd>
+        <dd><a href="javascript:">HTML5梦工场</a></dd>
+        <dd><a href="javascript:">电科技</a></dd>
+        <dd><a href="javascript:">HTML5梦工场</a></dd>
+        <dd><a href="javascript:">电科技</a></dd>
+        <dd><a href="javascript:">HTML5梦工场</a></dd>
+    </dl>
+    <dl>
+        <dt>特别鸣谢:</dt>
+        <dd><a href="javascript:">电科技</a></dd>
+        <dd><a href="javascript:">HTML5梦工场</a></dd>
+        <dd><a href="javascript:">电科技</a></dd>
+        <dd><a href="javascript:">HTML5梦工场</a></dd>
+        <dd><a href="javascript:">电科技</a></dd>
+        <dd><a href="javascript:">HTML5梦工场</a></dd>
+        <dd><a href="javascript:">电科技</a></dd>
+        <dd><a href="javascript:">HTML5梦工场</a></dd>
+    </dl>
+    <ul>
+        <li>
+            <a href="javascript:">关于我们</a>
+        </li>
+        <li>
+            <a href="javascript:">联系我们</a>
+        </li>
+        <li>
+            <a href="javascript:">官方QQ群</a>
+        </li>
+        <li>
+            <a href="javascript:">站长统计</a>
+        </li>
+    </ul>
+    <p>Copyright © 2014 www.lepinzhi.com 品智 品味智慧生活</p>
+    <p class="footer-pic">
+        <a href="javascript:"><img src="img/logo-le.jpg"></a>
+        <a href="javascript:" class="ft-pic1"><img src="img/logo-cw.jpg"></a>
+    </p>
+</div>
+</body>
 </html>
